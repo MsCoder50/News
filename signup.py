@@ -2,6 +2,7 @@ import customtkinter
 from tkinter import messagebox
 import mysql.connector
 from PIL import ImageTk, Image
+import os
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
@@ -9,10 +10,10 @@ customtkinter.set_default_color_theme("blue")
 
 try:
     conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        passwd="Hello@mscoder5",
-        database="news")
+        host=os.getenv(HOST),
+        user=os.getenv(USER_NAME),
+        password=os.getenv(PASS),
+        database=os.getenv(DB_NAME))
 
     cursor = conn.cursor()
 except:
