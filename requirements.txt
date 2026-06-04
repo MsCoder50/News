@@ -1,0 +1,4 @@
+Pillow
+customtkinter
+mysql-connector-python
+requests
